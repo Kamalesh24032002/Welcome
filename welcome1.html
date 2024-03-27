@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Company Website</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    .header {
+        background-color: #333;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .content {
+        text-align: center;
+    }
+
+    .company-name {
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+
+    .company-description {
+        font-size: 18px;
+        margin-bottom: 30px;
+    }
+
+    .contact-info {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+
+    .contact-info p {
+        margin: 5px 0;
+    }
+
+    .popup-overlay {
+        display: none;
+        position: fixed;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+        width: 100%;
+        height: 100%;
+    }
+
+    .popup-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        background-color: #ffffff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        text-align: center;
+        max-width: 80%;
+        margin: auto;
+    }
+
+    .popup-image {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    .popup-buttons {
+        margin-top: 20px;
+    }
+
+    .popup-buttons button {
+        padding: 10px 20px;
+        margin: 0 10px;
+        cursor: pointer;
+        border: none;
+        border-radius: 5px;
+        background-color: #007bffd8;
+        color: #ffffffe8;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
+    }
+
+    .popup-buttons button:hover {
+        background-color: #0057b3af;
+    }
+
+    .popup-buttons button:focus {
+        outline: none;
+    }
+
+    .cookie-message {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px;
+        border-radius: 5px;
+        margin-top: 20px;
+    }
+</style>
+</head>
+<body>
+
+<div class="header">
+    <h1>Welcome</h1>
+</div>
+
+<div class="container">
+    <div class="content">
+        <div class="company-name">GeekBase Technology</div>
+        <div class="company-description">
+            Education-Software-Information Technology Company.
+        <div class="contact-info">
+            <p>Contact us:</p>
+            <p>Email:info@geekbase.in/p>
+            <p>Phone: 9345997318</p>
+            <p>Address: Rasipuram,Namakkal,Tamil Nadu</p>
+        </div>
+        <div class="cookie-message" id="cookieMessage" style="display: none;">Cookies have been allowed!</div>
+    </div>
+</div>
+
+<div class="popup-overlay" id="popupOverlay">
+    <div class="popup-content">
+        <img src="logo-final-AQE4ywg50nuMz8aq" alt="Image" class="popup-image">
+        <p style="font-size: 20px; color: #333;">Allow cookies?</p>
+        <div class="popup-buttons">
+            <button onclick="allowCookies()">Yes</button>
+            <button onclick="closePopup()">Close</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    setTimeout(function() {
+        document.getElementById('popupOverlay').style.display = 'flex';
+    }, 5000);
+        function allowCookies() {
+        alert('Cookies allowed!');
+        document.getElementById('cookieMessage').style.display = 'block';
+        closePopup();
+    }
+    function closePopup() {
+        document.getElementById('popupOverlay').style.display = 'none';
+    }
+</script>
+
+</body>
+</html>
+
+
